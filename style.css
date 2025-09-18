@@ -209,6 +209,8 @@ body {
 .section-title-container {
     perspective: 500px;
     margin-bottom: 50px;
+    display: inline-block;
+    position: relative;
 }
 
 .section-title {
@@ -275,5 +277,158 @@ body {
     }
     .services-container {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Process Section */
+.process-section {
+    padding: 100px 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.process-title {
+    margin-bottom: 10px;
+}
+
+.underline {
+    height: 2px;
+    width: 100%;
+    background: #00aaff;
+    transform: scaleX(0);
+    transform-origin: center;
+    /* margin-bottom: 30px; /* REMOVED - now positioned by JS */
+}
+
+/* Desktop-specific elements for "Our Process" */
+.thread-svg.desktop-only,
+.hover-board.desktop-only {
+    position: absolute; /* positioned relative to .process-section */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2; /* Thread above board if needed */
+}
+
+.thread-svg.desktop-only {
+    /* Height and width from HTML tag, but can be specified here too */
+    /* top will be set by JS */
+}
+
+.thread-svg path {
+    stroke: rgba(255, 255, 255, 0.4); /* Softer white for thread */
+    stroke-width: 1.5; /* Thinner thread */
+    stroke-linecap: round; /* Smoother ends */
+}
+
+.hover-board.desktop-only {
+    /* top will be set by JS */
+    background: rgba(255, 255, 255, 0.08); /* Slightly more prominent background */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Slightly more prominent border */
+    border-radius: 25px; /* Softer rounded corners */
+    padding: 25px 40px; /* Increased padding */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Added distinct shadow for hanging effect */
+    width: 80%;
+    max-width: 1000px;
+    opacity: 0; /* Initially hidden, animated by JS */
+    display: flex; /* Only for desktop */
+    justify-content: space-around;
+    align-items: center; /* Vertically align content */
+    transform-origin: top center; /* Critical for rotation/sway effect */
+    z-index: 1; /* Ensure it's below the thread */
+    min-height: 120px; /* Give it a minimum height */
+}
+
+.process-card-desktop {
+    text-align: center;
+    opacity: 0; /* Initially hidden, animated by JS */
+    transform: translateY(20px);
+    padding: 10px 5px; /* Added some padding for better spacing */
+}
+
+.process-icon-desktop {
+    font-size: 2.5rem;
+    color: #00aaff;
+    margin-bottom: 15px;
+}
+
+.process-card-desktop h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Mobile-specific elements for "Our Process" */
+.process-timeline-container.mobile-only {
+    position: relative;
+    width: 100%;
+    margin-top: 40px; /* Keep margin for mobile to separate from title */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.process-card-mobile {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 350px;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transform: scale(0.5);
+    transform-origin: center;
+    position: absolute;
+    left: 50%;
+    top: 0; /* Position will be set by JS */
+}
+
+.process-icon {
+    font-size: 2rem;
+    color: #00aaff;
+    margin-right: 20px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.process-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+
+/* Responsive display logic */
+@media (max-width: 768px) {
+    .process-section {
+        padding: 80px 20px;
+    }
+    .thread-svg.desktop-only,
+    .hover-board.desktop-only {
+        display: none; /* Hide desktop elements on mobile */
+    }
+    .process-timeline-container.mobile-only {
+        display: flex; /* Show mobile container */
+    }
+}
+
+@media (min-width: 769px) {
+    .process-card-mobile {
+        display: none; /* Hide mobile cards on desktop */
+    }
+    .process-timeline-container.mobile-only {
+        display: none; /* Hide mobile container on desktop */
+    }
+    .thread-svg.desktop-only,
+    .hover-board.desktop-only {
+        display: block; /* Show desktop elements on desktop */
     }
 }
