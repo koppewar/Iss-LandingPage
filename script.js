@@ -89,12 +89,20 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             if (document.querySelector(targetId)) {
+                // Get the actual navbar dimensions for precise calculation
+                const navbar = document.querySelector('.navbar');
+                const navbarHeight = navbar.offsetHeight;
+                const navbarTop = 20; // Fixed top position from CSS
+                
+                // Calculate exact offset to position section title just below navbar
+                const totalNavbarSpace = navbarHeight + navbarTop + 10; // 10px buffer
+                
                 gsap.to(window, {
                     duration: 1.5,
                     ease: 'power2.inOut',
                     scrollTo: {
                         y: targetId,
-                        offsetY: 100
+                        offsetY: totalNavbarSpace
                     }
                 });
             }
@@ -217,18 +225,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 ease: "power2.out"
             }, "-=0.6");
 
-            // 4. Continuous Swaying Motion
+            // 4. Continuous Swaying Motion (only rotation, no horizontal movement)
             const swayTl = gsap.timeline({ repeat: -1, yoyo: true });
             
-            swayTl.to([hangingContainer, processBoard], {
-                x: 15,
-                rotation: 2,
+            swayTl.to(processBoard, {
+                rotation: 3,
                 duration: 3,
                 ease: "sine.inOut"
             })
-            .to([hangingContainer, processBoard], {
-                x: -15,
-                rotation: -2,
+            .to(processBoard, {
+                rotation: -3,
                 duration: 3,
                 ease: "sine.inOut"
             });
@@ -291,18 +297,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 ease: "power2.out"
             }, "-=0.4");
 
-            // 4. Mobile Swaying Motion (gentler)
+            // 4. Mobile Swaying Motion (only rotation, more gentle)
             const mobileSwayTl = gsap.timeline({ repeat: -1, yoyo: true });
             
-            mobileSwayTl.to(mobileContainer, {
-                x: 8,
-                rotation: 1,
+            mobileSwayTl.to(mobileBoard, {
+                rotation: 2,
                 duration: 2.5,
                 ease: "sine.inOut"
             })
-            .to(mobileContainer, {
-                x: -8,
-                rotation: -1,
+            .to(mobileBoard, {
+                rotation: -2,
                 duration: 2.5,
                 ease: "sine.inOut"
             });

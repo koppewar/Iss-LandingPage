@@ -195,19 +195,19 @@ body {
 
 /* Services Section */
 .services-section {
-    padding: 100px 50px;
-    min-height: 100vh;
+    padding: 15px 50px 20px 50px;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     z-index: 1;
 }
 
 .section-title-container {
     perspective: 500px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: inline-block;
     position: relative;
 }
@@ -225,7 +225,7 @@ body {
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 25px;
     width: 100%;
     max-width: 1200px;
 }
@@ -269,23 +269,27 @@ body {
 /* Responsive adjustments for services section */
 @media (max-width: 768px) {
     .services-section {
-        padding: 80px 20px;
+        padding: 10px 20px 15px 20px;
+        min-height: 70vh;
     }
     .section-title {
         font-size: 2.5rem;
+        margin-bottom: 25px;
     }
     .services-container {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
 /* Enhanced Process Section */
 .process-section {
-    padding: 100px 50px;
-    min-height: 100vh;
+    padding: 10px 50px 50px 50px;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     position: relative;
     z-index: 1;
     overflow: visible;
@@ -297,7 +301,7 @@ body {
 
 .underline {
     height: 4px;
-    width: 200px;
+    width: 100%;
     background: linear-gradient(90deg, #00aaff, #0088cc);
     transform: scaleX(0);
     transform-origin: center;
@@ -311,7 +315,7 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: calc(100% + 5px);
+    top: 4px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -372,17 +376,57 @@ body {
     position: relative;
 }
 
+.process-step-circle {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #00aaff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px auto;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 170, 255, 0.2);
+}
+
+.step-number {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: linear-gradient(135deg, #00aaff, #0088cc);
+    color: #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0, 170, 255, 0.4);
+    z-index: 2;
+}
+
 .process-icon {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #00aaff;
-    margin-bottom: 15px;
-    filter: drop-shadow(0 3px 10px rgba(0, 170, 255, 0.5));
+    filter: drop-shadow(0 2px 6px rgba(0, 170, 255, 0.5));
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
+.process-step:hover .process-step-circle {
+    transform: scale(1.05);
+    box-shadow: 
+        0 6px 20px rgba(0, 0, 0, 0.4),
+        0 3px 12px rgba(0, 170, 255, 0.3);
+}
+
 .process-step:hover .process-icon {
-    transform: scale(1.1) translateY(-3px);
-    filter: drop-shadow(0 5px 15px rgba(0, 170, 255, 0.7));
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 12px rgba(0, 170, 255, 0.7));
 }
 
 .process-step h3 {
@@ -505,7 +549,9 @@ body {
 /* Responsive Display Control */
 @media (max-width: 768px) {
     .process-section {
-        padding: 80px 20px;
+        padding: 5px 20px 30px 20px;
+        min-height: 70vh;
+        justify-content: flex-start;
     }
     
     .desktop-only {
@@ -517,8 +563,14 @@ body {
     }
     
     .underline {
-        width: 150px;
+        width: 100%;
         height: 3px;
+        margin-bottom: 15px;
+    }
+    
+    .process-title {
+        margin-bottom: 10px;
+        font-size: 2.5rem;
     }
 }
 
