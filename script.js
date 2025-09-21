@@ -109,6 +109,32 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    // --- CLIENTS SECTION ANIMATIONS ---
+    gsap.to(".clients-title", {
+        scrollTrigger: {
+            trigger: ".clients-section",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        },
+        duration: 1.5,
+        rotateX: 0,
+        opacity: 1,
+        ease: "power3.out"
+    });
+
+    gsap.from(".logo-scroller", {
+        scrollTrigger: {
+            trigger: ".clients-section",
+            start: "top 70%",
+            toggleActions: "play none none none"
+        },
+        duration: 1.2,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out"
+    });
+
+
     // --- SERVICES SECTION ANIMATIONS ---
     gsap.to(".services-title", {
         scrollTrigger: {
@@ -265,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 ease: "power2.out"
             });
 
-            // 2. Mobile Board Bubble Animation
+            // 2. Board Bubble Animation
             mobileTl.fromTo(mobileBoard, 
                 { 
                     opacity: 0, 
