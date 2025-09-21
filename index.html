@@ -70,74 +70,90 @@
             <div class="underline"></div>
         </div>
 
-        <!-- Desktop: Thread and Board -->
-        <svg class="thread-svg desktop-only" width="20" height="150" viewBox="0 0 20 150">
-            <path id="thread-path" stroke-width="1.5" stroke="rgba(255, 255, 255, 0.4)" fill="none" d="M 10,0 V 0"></path>
-        </svg>
-        <div class="hover-board desktop-only">
-            <div class="process-card-desktop">
-                    <i class="fas fa-handshake process-icon-desktop"></i>
+        <!-- Desktop: Hanging Thread Animation -->
+        <div class="hanging-container desktop-only">
+            <svg class="thread-svg" width="4" height="120" viewBox="0 0 4 120">
+                <path class="thread-line" d="M 2,0 L 2,120" stroke-width="2" stroke="rgba(255, 255, 255, 0.6)" fill="none"></path>
+            </svg>
+            
+            <div class="process-board">
+                <div class="process-step">
+                    <i class="fas fa-handshake process-icon"></i>
                     <h3>Meet</h3>
-            </div>
-            <div class="process-card-desktop">
-                    <i class="fas fa-tasks process-icon-desktop"></i>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-tasks process-icon"></i>
                     <h3>Plan</h3>
-            </div>
-            <div class="process-card-desktop">
-                    <i class="fas fa-paint-brush process-icon-desktop"></i>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-paint-brush process-icon"></i>
                     <h3>Design</h3>
-            </div>
-            <div class="process-card-desktop">
-                    <i class="fas fa-code process-icon-desktop"></i>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-code process-icon"></i>
                     <h3>Develop</h3>
-            </div>
-                <div class="process-card-desktop">
-                    <i class="fas fa-vial process-icon-desktop"></i>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-vial process-icon"></i>
                     <h3>Testing</h3>
-            </div>
-            <div class="process-card-desktop">
-                    <i class="fas fa-rocket process-icon-desktop"></i>
+                </div>
+                <div class="process-step">
+                    <i class="fas fa-rocket process-icon"></i>
                     <h3>Launch</h3>
+                </div>
             </div>
         </div>
 
-        <!-- Mobile: Process Cards Container -->
-        <div class="process-timeline-container mobile-only">
-            <!-- Mobile cards -->
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-handshake"></i></div>
-                <div class="process-content">
-                    <h3>1. Meet</h3>
-                </div>
-            </div>
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-tasks"></i></div>
-                <div class="process-content">
-                    <h3>2. Plan</h3>
-                </div>
-            </div>
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-paint-brush"></i></div>
-                <div class="process-content">
-                    <h3>3. Design</h3>
-                </div>
-            </div>
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-code"></i></div>
-                <div class="process-content">
-                    <h3>4. Develop</h3>
-                </div>
-            </div>
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-vial"></i></div>
-                <div class="process-content">
-                    <h3>5. Testing</h3>
-                </div>
-            </div>
-            <div class="process-card-mobile">
-                <div class="process-icon"><i class="fas fa-rocket"></i></div>
-                <div class="process-content">
-                    <h3>6. Launch</h3>
+        <!-- Mobile: Hanging Thread Animation -->
+        <div class="mobile-process mobile-only">
+            <div class="mobile-thread-container">
+                <svg class="mobile-thread-svg" width="4" height="60" viewBox="0 0 4 60">
+                    <path class="mobile-thread-line" d="M 2,0 L 2,60" stroke-width="2" stroke="rgba(255, 255, 255, 0.6)" fill="none"></path>
+                </svg>
+                
+                <div class="mobile-process-board">
+                    <div class="mobile-process-step">
+                        <i class="fas fa-handshake mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Meet</h3>
+                        </div>
+                        <div class="mobile-step-number">1</div>
+                    </div>
+                    <div class="mobile-process-step">
+                        <i class="fas fa-tasks mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Plan</h3>
+                        </div>
+                        <div class="mobile-step-number">2</div>
+                    </div>
+                    <div class="mobile-process-step">
+                        <i class="fas fa-paint-brush mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Design</h3>
+                        </div>
+                        <div class="mobile-step-number">3</div>
+                    </div>
+                    <div class="mobile-process-step">
+                        <i class="fas fa-code mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Develop</h3>
+                        </div>
+                        <div class="mobile-step-number">4</div>
+                    </div>
+                    <div class="mobile-process-step">
+                        <i class="fas fa-vial mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Testing</h3>
+                        </div>
+                        <div class="mobile-step-number">5</div>
+                    </div>
+                    <div class="mobile-process-step">
+                        <i class="fas fa-rocket mobile-process-icon"></i>
+                        <div class="mobile-process-content">
+                            <h3>Launch</h3>
+                        </div>
+                        <div class="mobile-step-number">6</div>
+                    </div>
                 </div>
             </div>
         </div>
