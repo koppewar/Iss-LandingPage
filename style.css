@@ -196,7 +196,7 @@ body {
 /* Section Base Styles */
 .section-title-container {
     perspective: 500px;
-    margin-bottom: 30px; 
+    margin-bottom: 0px; 
     display: inline-block;
     position: relative;
 }
@@ -343,7 +343,7 @@ body {
     }
     .section-title {
         font-size: 2.5rem;
-        margin-bottom: 25px;
+        margin-bottom: 5px;
     }
     .services-container {
         grid-template-columns: 1fr;
@@ -840,5 +840,139 @@ body {
     .work-item {
         width: calc(33.333% - 20px); /* Creates 3 columns with space between */
         margin: 10px; /* Creates a 20px gap between cards */
+    }
+}
+
+/* --- About Us Section --- */
+.about-us-section {
+    padding: 0px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.about-us-content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hanging-board-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-top: 0px; /* Space for the nail */
+}
+
+.nail {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #e0e0e0, #a0a0a0);
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+}
+
+.hanging-thread-svg {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.3));
+}
+
+.thread-left,
+.thread-right {
+    stroke-dasharray: 128; /* Approx. length of diagonal line */
+    stroke-dashoffset: 128;
+}
+
+.about-us-board {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px 35px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    max-width: 800px;
+    margin-top: 80px; /* Space below the threads */
+    opacity: 0;
+}
+
+.about-us-board p {
+    margin: 0;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    color: #e0e0e0;
+}
+
+.about-us-details {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+}
+
+.detail-box {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.detail-box h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #00aaff;
+    display: inline-block;
+}
+
+.detail-box p {
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+/* Responsive About Us Section */
+@media (max-width: 768px) {
+    .about-us-section {
+        padding: 0px 20px;
+    }
+    
+    .hanging-board-container {
+        margin-bottom: 40px;
+    }
+    
+    .about-us-board {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .about-us-board p {
+        font-size: 1rem;
+    }
+
+    .about-us-details {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .detail-box h3 {
+        font-size: 1.6rem;
     }
 }

@@ -404,4 +404,54 @@ document.addEventListener("DOMContentLoaded", function() {
         $('.filter-btn').removeClass('active');
         $(this).addClass('active');
     });
+
+    // --- ABOUT US SECTION ANIMATIONS ---
+    const aboutUsTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about-us-section",
+            start: "top 70%",
+            toggleActions: "play none none reverse"
+        }
+    });
+
+    // 1. Title reveals
+    aboutUsTl.to(".about-us-title", {
+        duration: 1.5,
+        rotateX: 0,
+        opacity: 1,
+        ease: "power3.out"
+    });
+
+    // 2. Nail appears
+    aboutUsTl.to(".nail", {
+        scale: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: "back.out(1.7)"
+    }, "-=1");
+
+    // 3. Threads draw down
+    aboutUsTl.to([".thread-left", ".thread-right"], {
+        strokeDashoffset: 0,
+        duration: 1,
+        ease: "power2.out"
+    }, "-=0.7");
+
+    // 4. Board drops and reveals
+    aboutUsTl.to(".about-us-board", {
+        opacity: 1,
+        y: 0, // This is controlled by margin-top, so we just animate opacity
+        duration: 1,
+        ease: "power2.out"
+    }, "-=0.5");
+
+    // 5. Details fade in
+    aboutUsTl.to(".detail-box", {
+        opacity: 1,
+        y: 0,
+        stagger: 0.3,
+        duration: 0.8,
+        ease: "power2.out"
+    }, "-=0.4");
+
 });
