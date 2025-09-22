@@ -985,7 +985,7 @@ body {
 
 /* --- Our Team Section --- */
 .team-section {
-    padding: 3px 50px 80px;
+    padding: 3px 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1172,7 +1172,7 @@ body {
 
 @media (max-width: 768px) {
     .team-section {
-        padding: 3px 20px 60px;
+        padding: 3px 20px 0px;
     }
     .team-board {
         width: 100%;
