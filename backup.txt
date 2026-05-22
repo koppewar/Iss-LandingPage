@@ -428,11 +428,12 @@
             <h2 class="section-title contact-title">Contact Us</h2>
         </div>
         <div class="contact-container">
-            <a href="mailto:info@example.com" class="contact-card">
+            <div class="contact-card">
                 <i class="fas fa-envelope contact-icon"></i>
                 <h3>Email</h3>
-                <p>info@example.com</p>
-            </a>
+                <p><a href="mailto:karthik@innovativesoftwaresolutions.org">karthik@innovativesoftwaresolutions.org</a></p>
+                <p style="margin-top: 8px;"><a href="mailto:hr@innovativesoftwaresolutions.org">hr@innovativesoftwaresolutions.org</a></p>
+            </div>
             <a href="tel:+919703456511" class="contact-card">
                 <i class="fas fa-phone-alt contact-icon"></i>
                 <h3>Mobile</h3>
